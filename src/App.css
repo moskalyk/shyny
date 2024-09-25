@@ -1,0 +1,165 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+}
+
+.light-strip {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+}
+
+.light {
+  width: 50px;
+  height: 50px;
+  background-color: #555;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.light.on {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.screen {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px);
+  margin-top: 0px;
+  overflow: hidden;
+}
+
+.light-cone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  background-size: cover;
+  transform-origin: top center;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  height: 100vh;            /* Full height of the viewport */
+  width: 100vw;             /* Full width of the viewport */
+}
+/* Left (counterclockwise) rotations */
+
+@keyframes rotate-cone-left-0 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-120deg); /* Rotate left (counterclockwise) */
+  }
+  100% {
+    transform: rotate(0deg); /* Back to original position */
+  }
+}
+
+@keyframes rotate-cone-left-2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-160deg); /* Rotate left (counterclockwise) */
+  }
+  100% {
+    transform: rotate(0deg); /* Back to original position */
+  }
+}
+
+@keyframes rotate-cone-left-4 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-200deg); /* Rotate left (counterclockwise) */
+  }
+  100% {
+    transform: rotate(0deg); /* Back to original position */
+  }
+}
+
+/* Right (clockwise) rotations */
+
+@keyframes rotate-cone-right-1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(120deg); /* Rotate right (clockwise) */
+  }
+  100% {
+    transform: rotate(0deg); /* Back to original position */
+  }
+}
+
+@keyframes rotate-cone-right-3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(160deg); /* Rotate right (clockwise) */
+  }
+  100% {
+    transform: rotate(0deg); /* Back to original position */
+  }
+}
+
+@keyframes rotate-cone-right-5 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(200deg); /* Rotate right (clockwise) */
+  }
+  100% {
+    transform: rotate(0deg); /* Back to original position */
+  }
+}
+
+.light-cone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  background-size: cover;
+  transform-origin: top center; /* This is overridden per light in inline styles */
+}
+
+
+.light-cone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  background-size: cover;
+  transform-origin: top center; /* This is overridden per light in inline styles */
+}
+
+.input-container {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+}
+
+input {
+  padding: 5px;
+  width: 280px;
+}
